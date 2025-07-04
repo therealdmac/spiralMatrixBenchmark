@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+spring:
+#  cache:
+#    type: caffeine
+#    cache-names: benchmarkResults
+#    caffeine:
+#      spec: maximumSize=100,expireAfterWrite=30m
+#    cache-manager:
+#      async: true
+  application:
+    name: SpiralMatrixBenchmark
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,caches
+    sessions:
+      delete:
+        enabled: false
+  endpoint:
+    caches:
+      enabled: true
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+  api-docs:
+    path: /v3/api-docs
+  show-actuator: true
